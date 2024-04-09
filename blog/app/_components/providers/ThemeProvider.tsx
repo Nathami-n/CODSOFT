@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 const Provider = ({
     children
 }:{
-    children: string | React.JSX.Element | React.JSX.Element[]
+    children: React.ReactNode
 }) => {
     const [mounted, setMounted] = useState<boolean>(false); 
     
