@@ -1,4 +1,5 @@
  import Logo from './Logo'
+ import Theme from './Theme'
  import NavLinks from './NavLinks'
  const Navbar  = () => {
   return (
@@ -7,6 +8,7 @@
      >
         <Logo/>
         <NavLinks/>
+        <Theme/>
     </div>
   )
 }
