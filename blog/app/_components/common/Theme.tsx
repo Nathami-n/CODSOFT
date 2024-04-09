@@ -1,9 +1,16 @@
 'use client'
+import type { KindeUser } from '@kinde-oss/kinde-auth-nextjs/types';
 import { MoonIcon, SunIcon } from 'lucide-react';
 import {useTheme} from 'next-themes'
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import DropDown from './DropDown';
 
-const Theme = () => {
+const Theme = ({
+    user
+}:{
+    user?:KindeUser | null
+}) => {
     const [mounted, setMounted] = useState(false);
     const {systemTheme, theme, setTheme} = useTheme();
     useEffect(()=>{
@@ -31,6 +38,13 @@ const Theme = () => {
   return (
     <>
     {iconRenderToggle()}
+    {user && <Image
+        src={user?.picture as string}
+        height={25}
+        width={25}
+        alt='user'
+        className='rounded-full max-lg:hidden'
+    />}
     </>
   )
 }
