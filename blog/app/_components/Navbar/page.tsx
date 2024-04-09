@@ -1,14 +1,14 @@
  import Logo from './Logo'
- import Theme from './Theme'
  import NavLinks from './NavLinks'
+import UserMenu from './UserMenu'
  const Navbar  = () => {
   return (
     <div
-    className="w-full p-3 border-b shadow-md flex items-center justify-between "
+    className="w-full p-5 border-b flex items-center justify-between "
      >
-        <Logo/>
-        <NavLinks/>
-        <Theme/>
+       <Logo/> 
+       <NavLinks/>
+       <UserMenu/>
     </div>
   )
 }

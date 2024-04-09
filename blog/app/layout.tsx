@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { RootLayoutProps } from "@/types/rootLayout";
 import { Navbar } from "./_components";
 import Provider from "./_components/providers/ThemeProvider";
-const inter = Inter({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NateLog",
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-        <body className={`${inter.className}`}>
+        <body className={`${manrope.className}`}>
         <Provider>
           <Navbar />
           {children}

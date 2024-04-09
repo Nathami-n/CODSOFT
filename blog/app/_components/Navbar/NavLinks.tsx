@@ -5,6 +5,7 @@ import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 import { LogOut } from 'lucide-react';
 
 import Image from 'next/image'
+import { links } from '@/app/utils/links';
 const NavLinks = async () => {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
@@ -12,29 +13,14 @@ const NavLinks = async () => {
 
 
     return (
-        <div
-            className=" flex items-center justify-between gap-8 "
-        >
-            {user && <Link href={'/'}>Blog</Link>}
-            {user ? <LogoutLink>
-                <LogOut  className="text-red-500 text-md"/>
-            </LogoutLink> : (
-                <LoginLink>Sign in </LoginLink>
-            )}
-            {!user ? (
-                <RegisterLink><Button title='Start here' /></RegisterLink>
-            ) : (
-                <Image
-                    src={user?.picture as string}
-                    alt='user logo'
-                    width={50}
-                    height={50}
-                    className="rounded-full cursor-pointer"
-                />
-
-            )}
-
+     <div>
+        <div className='flex items-center max-lg:hidden justify-between flex-1 gap-5'>
+            {links.map((link, i)=> {
+                return <Link key={i} href={link.title} className='font-semibold text-[#022140]'>{link.title}</Link>
+            })}
         </div>
+
+     </div>
     )
 }
 
