@@ -4,7 +4,7 @@
  const Navbar  = () => {
   return (
     <div
-    className="w-full   p-3 border-b shadow-md flex items-center justify-between "
+    className="w-full p-3 border-b shadow-md flex items-center justify-between "
      >
         <Logo/>
         <NavLinks/>

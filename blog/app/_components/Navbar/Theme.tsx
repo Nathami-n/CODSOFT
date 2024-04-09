@@ -14,7 +14,7 @@ const Theme = () => {
         return null;
     }
     const iconRenderToggle = () => {
-       if(!mounted) return null;
+       if(!mounted) return <div/>;
         const  userTheme = theme === 'system' ? systemTheme : theme;
         if(userTheme === 'dark') {
             return (
