@@ -14,7 +14,7 @@ const UserMenu = ({
         <div className="flex items-center gap-4 flex-1">
         <SearchModal/>
         <Theme user={user}/>
-        <DropDown/>
+        <DropDown user={user}/>
         </div>
     </div>
   )

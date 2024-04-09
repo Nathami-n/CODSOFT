@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon } from 'lucide-react';
 import {useTheme} from 'next-themes'
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-import DropDown from './DropDown';
+
 
 const Theme = ({
     user
@@ -25,27 +25,27 @@ const Theme = ({
         const  userTheme = theme === 'system' ? systemTheme : theme;
         if(userTheme === 'dark') {
             return (
-            <SunIcon className=" max-lg:hidden  text-yellow-500 cursor-pointer" role='button' onClick={()=> setTheme('light')}/>
+            <SunIcon className="  text-yellow-500 cursor-pointer" role='button' onClick={()=> setTheme('light')}/>
             )
         }
         else {
             return (
-                <MoonIcon className=" max-lg:hidden cursor-pointer" role='button' onClick={()=> setTheme('dark')}/>
+                <MoonIcon className="cursor-pointer" role='button' onClick={()=> setTheme('dark')}/>
             )
         }
     };
 
   return (
-    <>
+    <div className="flex items-center gap-3">
     {iconRenderToggle()}
     {user && <Image
         src={user?.picture as string}
         height={25}
         width={25}
         alt='user'
-        className='rounded-full max-lg:hidden'
+        className='rounded-full'
     />}
-    </>
+    </div>
   )
 }
 

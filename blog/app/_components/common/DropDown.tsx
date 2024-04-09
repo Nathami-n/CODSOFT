@@ -5,10 +5,14 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { links } from '@/app/utils/links'
 import Link from 'next/link'
-import Theme from '@/app/_components/common/Theme'
+import type { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types"
+import MobileTheme from '../common/MobileTheme'
 
-
-const DropDown = () => {
+const DropDown = ({
+    user
+}:{
+    user: KindeUser | null 
+}) => {
     const [open, setOpen] = useState<boolean>(false);
     return (
         <div className="lg:hidden">
@@ -35,7 +39,7 @@ const DropDown = () => {
                             return <Link key={i} href={link.title} className='font-semibold text-[#022140]'>{link.title}</Link>
                         })}
                         <div>
-                            <Theme/>
+                        <MobileTheme user={user}/>
                         </div>
                     </div>
                 </motion.div>
