@@ -18,12 +18,12 @@ const Theme = () => {
         const  userTheme = theme === 'system' ? systemTheme : theme;
         if(userTheme === 'dark') {
             return (
-            <SunIcon  role='button' onClick={()=> setTheme('light')}/>
+            <SunIcon className=" text-yellow-500 cursor-pointer" role='button' onClick={()=> setTheme('light')}/>
             )
         }
         else {
             return (
-                <MoonIcon role='button ' onClick={()=> setTheme('dark')}/>
+                <MoonIcon className="  cursor-pointer" role='button' onClick={()=> setTheme('dark')}/>
             )
         }
     };

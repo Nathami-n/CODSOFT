@@ -1,16 +1,19 @@
 
 import Image from 'next/image'
+import Link from 'next/link'
 const Logo = () => {
   return (
-    <div 
-    className="relative bg-red-400 flex-1 h-full"
+    <Link
+    href='/'
+    className="relative h-10 w-32"
     >
    <Image
-   src=''
+   src='https://cdn-icons-png.flaticon.com/128/2015/2015630.png'
    alt='logo'
+   className="object-contain"
    fill
     />
-    </div>
+    </Link>
   )
 }
 
