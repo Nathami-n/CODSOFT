@@ -1,12 +1,23 @@
 
+import Button from "../common/Button"
+
 const Welcome = () => {
     return (
-        <div>
-            <div className="w-[80%] mx-auto flex flex-col items-center justify-center">
-                <div><h1 className="text-5xl">Stay curious.</h1></div>
-
-                <p className="text-base">Discover more, learn and write on various topics</p>
+        <div className=" p-3 lg:p-8 lg:mt-10 border lg:h-[300px] rounded-md">
+            <div className=" lg:mt-12">
+                <div className="flex flex-col justify-center gap-3">
+                    <h1 
+                    className="text-3xl tracking-tight font-bold"
+                    >Stay Informed, Stay relevant
+                    </h1>
+                    <p> Read, Write and Learn on NateLog.</p>
+                </div>
+               <div>
+               
+                <Button title="Get Started"/>
+               </div>
             </div>
+         
         </div>
     )
 }

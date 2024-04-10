@@ -27,6 +27,7 @@ model Post {
   title String
   body String
   author User @relation(fields:[authorId], references: [kindeId])
+  type String?
   authorId String 
   comments Comment[]
 }
