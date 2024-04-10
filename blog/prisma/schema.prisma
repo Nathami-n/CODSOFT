@@ -17,6 +17,8 @@ model User {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   email String @unique
   name String?
+  imageUrl String?
+  kindeId String? @unique
   posts Post[]
 }
 
@@ -24,8 +26,8 @@ model Post {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   title String
   body String
-  author User @relation(fields:[authorId], references: [id])
-  authorId String @db.ObjectId
+  author User @relation(fields:[authorId], references: [kindeId])
+  authorId String 
   comments Comment[]
 }
 
