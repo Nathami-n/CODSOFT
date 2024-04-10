@@ -25,12 +25,18 @@ const Theme = ({
         const  userTheme = theme === 'system' ? systemTheme : theme;
         if(userTheme === 'dark') {
             return (
-            <SunIcon className="  text-yellow-500 cursor-pointer" role='button' onClick={()=> setTheme('light')}/>
+                <div onClick={()=> setTheme('light')} className='cursor-pointer flex items-center gap-1'>
+                     <SunIcon className="  text-yellow-500 cursor-pointer" role='button' />
+                     <p className='text-white font-semibold'>Go Light!</p>
+                </div>
             )
         }
         else {
             return (
-                <MoonIcon className="cursor-pointer" role='button' onClick={()=> setTheme('dark')}/>
+                <div onClick={()=> setTheme('dark')} className='flex items-center cursor-pointer gap-1'>
+                     <MoonIcon className="cursor-pointer" role='button' />
+                     <p className='font-semibold text-[#022140]'>Go Dark!</p>
+                </div>
             )
         }
     };
@@ -43,8 +49,9 @@ const Theme = ({
         height={25}
         width={25}
         alt='user'
-        className='rounded-full'
+        className='rounded-full absolute right-2 top-2'
     />}
+   
     </div>
   )
 }
