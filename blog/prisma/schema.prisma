@@ -25,10 +25,12 @@ model User {
 model Post {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   title String
+  image String?
   body String
   author User @relation(fields:[authorId], references: [kindeId])
-  type String?
+  category String?
   authorId String 
+  createdAt DateTime @default(now())
   comments Comment[]
 }
 
