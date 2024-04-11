@@ -25,7 +25,7 @@ export  const createPostId =  async ()  => {
 
 }
 
-export const savePost = async (postData: PostType) => {
+export const savePost = async (postData: PostType, postId: string) => {
     const user = await getUser();
     const {
         title,
@@ -39,6 +39,19 @@ export const savePost = async (postData: PostType) => {
         contentType: 'image/*'
     })
     
+    const postToUpdate = await prisma.post.update({
+        where: {
+            id: id as string,
+        },
+        data: {
+            title: title as string,
+            body: content as string,
+            image: userData?.path as string,
+            category: category as string,
+        }
+    })
+
+    return redirect('/');
 
   
 }   
