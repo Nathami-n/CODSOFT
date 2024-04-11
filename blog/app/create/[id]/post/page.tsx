@@ -22,6 +22,12 @@ const Page = () => {
   const [quilValue, setQuilValue] = useState('');
 
   const handlePost = () => {
+    const Post = {
+      title: postTitle,
+      category: category,
+      image: File || null,
+      content: quilValue
+    }
 
   }
   return (

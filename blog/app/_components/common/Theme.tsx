@@ -1,6 +1,6 @@
 'use client'
 import type { KindeUser } from '@kinde-oss/kinde-auth-nextjs/types';
-import { MoonIcon, SunIcon, LogOutIcon } from 'lucide-react';
+import { MoonIcon, SunIcon, LogOutIcon, NotebookIcon } from 'lucide-react';
 import { useTheme } from 'next-themes'
 import {LogoutLink, RegisterLink} from "@kinde-oss/kinde-auth-nextjs"
 import Image from 'next/image';
@@ -73,6 +73,9 @@ const Theme = ({
                                 <p>Logout</p>
                             </div>
                         </LogoutLink>
+        </div>
+        <div>
+            
         </div>
                 </motion.div>
             }

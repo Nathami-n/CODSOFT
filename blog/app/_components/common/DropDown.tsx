@@ -8,6 +8,7 @@ import Link from 'next/link'
 import type { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types"
 import MobileTheme from '../common/MobileTheme'
 import { LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs"
+import { createPostId } from "@/app/actions/postActions"
 
 const DropDown = ({
     user
@@ -15,6 +16,9 @@ const DropDown = ({
     user: KindeUser | null
 }) => {
     const [open, setOpen] = useState<boolean>(false);
+    const handlePost =  async () => {
+        await createPostId()
+    }
     return (
         <div className="lg:hidden">
             <MenuIcon role='button' onClick={() => setOpen(!open)} />
@@ -36,7 +40,7 @@ const DropDown = ({
                     className="lg:hidden fixed right-0 p-5 left-0 border  rounded-md bg-white z-50"
                 >
                     <div className="flex flex-col gap-3 ">
-                        {user && (<Link  className="font-semibold text-[#022140]" href={'/'}> Start Blogging</Link>)}
+                        {user && (< button  className="font-semibold text-[#022140]"  onClick={handlePost}> Start Blogging</button>)}
                         {links.map((link, i) => {
                             return <Link key={i} href={link.title} className='font-semibold text-[#022140]'>{link.title}</Link>
                         })}
