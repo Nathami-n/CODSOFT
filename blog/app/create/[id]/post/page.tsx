@@ -14,34 +14,36 @@ import { categories } from "@/app/utils/categories"
 
 import "react-quill/dist/quill.snow.css"
 import ReactQuill from "react-quill"
-import { ImageIcon, PlusIcon } from "lucide-react"
+import { ImageIcon, ImageOffIcon, PlusIcon } from "lucide-react"
 import { savePost } from "@/app/actions/postActions"
 const Page = ({
-params
-}:{
+  params
+}: {
   params: {
     id: string
   }
 }) => {
-  console.log(params.id)
-  const [postTitle, setPostTitle] = useState('');
-  const [category, setCategory] = useState('')
-  const [image, setImage] = useState<File | null>(null)
   const [quilValue, setQuilValue] = useState('');
-
-  const handlePost = () => {
-    const post = {
-      title: postTitle,
-      category: category,
-      content: quilValue,
-      image: image,
+  const [image, setImage] = useState<File|null>(null);
+  const handleFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files
+    if (files && files.length > 0) {
+      const file = files[0];
+      setImage(file);
     }
-    // post the post
-    savePost(post, params.id);
+   
   }
+  const handleFormSubmit = async (formData: FormData) => {
+
+    savePost(formData, quilValue, params.id);
+  }
+
+
   return (
-    <><div
-      className="border  max-w-2xl rounded-md mb-24 h-[680px] mx-auto mt-8  shadow-lg"
+    <>
+    <form
+    action={handleFormSubmit}
+    className="border  max-w-2xl rounded-md mb-24 h-[680px] mx-auto mt-8  shadow-lg"
     >
 
       <div className="">
@@ -53,9 +55,10 @@ params
         <div className="border p-4 rounded-lg mx-2 mt-2">
           <input
             type='text'
+            name='title'
             placeholder="Post Title"
             className="bg-transparent outline-none w-full p-2"
-            onChange={(e) => setPostTitle(e.target.value)} />
+             />
         </div>
         {/* quill */}
 
@@ -72,16 +75,13 @@ params
         {/* Image */}
         <div className="border rounded-lg mt-2 p-3 mx-2">
           <h1 className="font-extrabold text-xl mb-2">Add Image</h1>
-          <div className="flex items-cente">
+          <div className="flex items-center">
             <input
               type='file'
-              id='image'
+              name='image'
+              id="image"
               accept="image/*"
-              onChange={(e) => setImage((prev) => {
-                if (e.target.files !== null)
-                  prev = e.target.files[0]
-                return prev
-              })}
+              onChange={handleFileChange}
               className='hidden' />
             <label htmlFor="image">
               <div className="border  cursor-pointer hover:bg-rose-500 hover:text-white transition p-4 h-[50px] w-[50px] rounded-lg grid place-content-center">
@@ -100,9 +100,9 @@ params
 
         <div className="border rounded-lg mt-2 p-3 mx-2 ">
           <h1 className="font-extrabold text-xl mb-2">Category</h1>
-          <Select onValueChange={(value) => setCategory(value)}>
+          <Select name="category" >
             <SelectTrigger>
-              <SelectValue placeholder="Select Category"/>
+              <SelectValue placeholder="Select Category" />
             </SelectTrigger>
             <SelectContent>
               {categories?.map((category) => {
@@ -114,8 +114,9 @@ params
           </Select>
         </div>
       </div>
-    </div>
-    <PostSave handlePost={handlePost}/>
+      <PostSave />
+    </form>
+     
     </>
   )
 }

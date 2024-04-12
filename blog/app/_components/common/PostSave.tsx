@@ -1,11 +1,7 @@
 import Button from "./Button"
 import {useRouter} from 'next/navigation'
 
-const PostSave = ( {
-    handlePost
-}:{
-    handlePost: () => void
-}) => {
+const PostSave = ( ) => {
     const router = useRouter();
     const handleCancel = () =>{
         router.push('/');
@@ -20,7 +16,6 @@ const PostSave = ( {
     />
     <Button
     title="Post"
-    handlePost={handlePost}
     />
 
    </div>

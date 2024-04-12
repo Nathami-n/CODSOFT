@@ -5,6 +5,7 @@ const MainBlogs = () => {
   return (
     <div className="h-screen">
       <Welcome/>
+      <Blogs/>
     </div>
   )
 }

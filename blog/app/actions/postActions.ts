@@ -25,33 +25,36 @@ export  const createPostId =  async ()  => {
 
 }
 
-export const savePost = async (postData: PostType, postId: string) => {
-   
-    const {
-        title,
-        content,
-        image,
-        category
-    } = postData;
+export const savePost = async (formData: FormData, content: string, postId: string) => {
 
-    const {data: userData} = await supabase.storage.from("nateLog").upload(`${image?.name}-${new Date().toISOString()}`, image as File, {
-        cacheControl: '259200',
-        contentType: 'image/*'
-    })
+    const title = formData.get("title") as string;
+    const photo = formData.get("image") as File;
+    const category = formData.get("category") as string;
     
-    const postToUpdate = await prisma.post.update({
+    // upload the photo
+
+    const {data: imageData, error} = await supabase.storage.from("nateLog").upload(`${photo.name}-${new Date().toISOString()}`, photo, {
+        cacheControl:'259200',
+        contentType: 'image/*'
+    });
+     
+    if( error) {
+        console.error(error)
+        return
+    }
+    // update the file in database
+
+    const updatedFile = await prisma.post.update({
         where: {
-            id: postId as string,
+            id: postId as string
         },
-        data: {
-            title: title as string,
+        data:{
+            title: title,
+            imageLink: imageData?.path as string,
+            category: category,
             body: content as string,
-            image: userData?.path as string,
-            category: category as string,
         }
     })
-
-    return redirect('/');
-
-  
+    
+    return updatedFile?.imageLink;
 }   
