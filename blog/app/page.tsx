@@ -1,6 +1,7 @@
 import { Welcome, MainBlogs, RestBlogs } from "./_components"
 
 
+
 const Home = () => {
   return (
     <div className ="dark:bg-black dark:text-white">
@@ -9,10 +10,9 @@ const Home = () => {
       style={{
         gridTemplateColumns: "2fr 1fr"
       }}
-      className="min-h-screen max-w-5xl mx-auto gap-4  grid ">
+      className="min-h-screen mt-6 max-w-5xl mx-auto gap-4  grid ">
         <MainBlogs/>
         <RestBlogs/>
-
       </div>
 
     </div>

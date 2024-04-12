@@ -1,3 +1,4 @@
+'use server'
 import prisma from '@/app/utils/prismaClient'
 
 export const getPost =  async () => {

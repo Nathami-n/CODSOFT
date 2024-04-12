@@ -6,10 +6,10 @@ export type PostType = {
 }
 
 export type Posts = {
-        title: string,
-        body: string,
-        id: string,
-        authorId: string,
-        category: string,
-        imageLink: string,
+    id: string;
+    title: string | null;
+    imageLink: string | null;
+    body: string | null;
+    category: string | null;
+    authorId: string;
 }
