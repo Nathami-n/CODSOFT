@@ -15,20 +15,29 @@ import { categories } from "@/app/utils/categories"
 import "react-quill/dist/quill.snow.css"
 import ReactQuill from "react-quill"
 import { ImageIcon, PlusIcon } from "lucide-react"
-const Page = () => {
+import { savePost } from "@/app/actions/postActions"
+const Page = ({
+params
+}:{
+  params: {
+    id: string
+  }
+}) => {
+  console.log(params.id)
   const [postTitle, setPostTitle] = useState('');
   const [category, setCategory] = useState('')
   const [image, setImage] = useState<File | null>(null)
   const [quilValue, setQuilValue] = useState('');
 
   const handlePost = () => {
-    const Post = {
+    const post = {
       title: postTitle,
       category: category,
-      image: File || null,
-      content: quilValue
+      content: quilValue,
+      image: image,
     }
-
+    // post the post
+    savePost(post, params.id);
   }
   return (
     <><div

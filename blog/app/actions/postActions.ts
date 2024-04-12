@@ -26,7 +26,7 @@ export  const createPostId =  async ()  => {
 }
 
 export const savePost = async (postData: PostType, postId: string) => {
-    const user = await getUser();
+   
     const {
         title,
         content,
@@ -41,7 +41,7 @@ export const savePost = async (postData: PostType, postId: string) => {
     
     const postToUpdate = await prisma.post.update({
         where: {
-            id: id as string,
+            id: postId as string,
         },
         data: {
             title: title as string,

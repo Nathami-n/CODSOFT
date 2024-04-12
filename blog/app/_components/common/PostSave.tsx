@@ -16,6 +16,7 @@ const PostSave = ( {
     <Button
     title='Cancel'
     handleCancel={handleCancel}
+
     />
     <Button
     title="Post"
