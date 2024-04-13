@@ -38,3 +38,14 @@ export const getPosts = async () => {
 
     return data;
 }
+
+export const getSinglePost = async (id:string) => {
+    const post = await prisma.post.findUnique({
+        where: {
+            id: id as string
+        }
+    })
+
+    return post
+
+}
