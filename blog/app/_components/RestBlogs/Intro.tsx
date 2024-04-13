@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-const Intro = async () => {
+const Intro =  () => {
     return (
         <><div
             className="p-8 flex flex-col justify-center mt-[13px] bg-[#EAE9E8] text-[#022140] border-b  "

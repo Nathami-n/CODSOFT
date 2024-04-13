@@ -10,7 +10,8 @@ export const getPost =  async () => {
         authorId: true,
         category: true,
         imageLink: true,
-        createdAt: true
+        createdAt: true,
+        author: true
     },
     orderBy:{
         createdAt: 'desc'
@@ -28,6 +29,7 @@ export const getPosts = async () => {
             id: true,
             authorId: true,
             category: true,
+            author: true,
             imageLink: true,
             createdAt: true
         },
@@ -43,6 +45,16 @@ export const getSinglePost = async (id:string) => {
     const post = await prisma.post.findUnique({
         where: {
             id: id as string
+        },
+        select:{
+            title: true,
+            body: true,
+            id: true,
+            authorId: true,
+            category: true,
+            author: true,
+            imageLink: true,
+            createdAt: true
         }
     })
 
