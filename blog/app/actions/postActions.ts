@@ -51,7 +51,7 @@ export const savePost = async (formData: FormData, content: string, postId: stri
         data:{
             title: title,
             imageLink: imageData?.path as string,
-            category: category,
+            category: category.trim().toLowerCase(),
             body: content as string,
         }
     })

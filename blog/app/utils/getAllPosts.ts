@@ -10,6 +10,9 @@ export const getPost =  async () => {
         authorId: true,
         category: true,
         imageLink: true,
+    },
+    orderBy:{
+        createdAt: 'desc'
     }
     })
 
