@@ -1,6 +1,6 @@
 
 'use client'
-import { LogOut, LogOutIcon, MenuIcon, RouteOffIcon } from "lucide-react"
+import { LogOut, LogOutIcon, MenuIcon, NotebookIcon, RouteOffIcon } from "lucide-react"
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { links } from '@/app/utils/links'
@@ -40,19 +40,23 @@ const DropDown = ({
                     className="lg:hidden fixed right-0 p-5 left-0 border  rounded-md bg-white z-50"
                 >
                     <div className="flex flex-col gap-3 ">
-                        {user && (< button  className="font-semibold text-[#022140]"  onClick={handlePost}> Start Blogging</button>)}
+                        {user && (< button  className="font-semibold w-max text-[#022140]"  onClick={handlePost}> Start Blogging</button>)}
                         {links.map((link, i) => {
                             return <Link key={i} href={link.title} className='font-semibold text-[#022140]'>{link.title}</Link>
                         })}
                         <div>
                             <MobileTheme user={user} />
                         </div>
-                        {user ? (<LogoutLink>
+                        {user ? (
+                        <div className="grid"> 
+                            <LogoutLink>
                             <div className="flex items-center gap-2 font-bold">
                                 <LogOutIcon />
                                 <p>Logout</p>
                             </div>
-                        </LogoutLink>): (
+                        </LogoutLink>
+                        </div>
+                        ): (
                             <RegisterLink>
                                 <h1 className="font-semibold text-[#022140]">Sign Up</h1>
                             </RegisterLink>

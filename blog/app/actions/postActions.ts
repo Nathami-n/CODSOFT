@@ -58,3 +58,7 @@ export const savePost = async (formData: FormData, content: string, postId: stri
     
     return updatedFile?.imageLink;
 }   
+
+export const takeHome = async () => {
+    return redirect('/');
+}

@@ -7,10 +7,8 @@ const Home = () => {
     <div className ="dark:bg-black dark:text-white">
 
       <div 
-      style={{
-        gridTemplateColumns: "2fr 1fr"
-      }}
-      className="min-h-screen mt-6 max-w-5xl mx-auto gap-4  grid ">
+      
+      className="min-h-screen mt-6 max-w-5xl mx-auto lg:gap-4  lg:grid lg:grid-cols-3">
         <MainBlogs/>
         <RestBlogs/>
       </div>

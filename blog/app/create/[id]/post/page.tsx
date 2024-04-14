@@ -15,7 +15,7 @@ import { categories } from "@/app/utils/categories"
 import "react-quill/dist/quill.snow.css"
 import ReactQuill from "react-quill"
 import { ImageIcon, ImageOffIcon, PlusIcon } from "lucide-react"
-import { savePost } from "@/app/actions/postActions"
+import { savePost, takeHome} from "@/app/actions/postActions"
 const Page = ({
   params
 }: {
@@ -35,7 +35,13 @@ const Page = ({
   }
   const handleFormSubmit = async (formData: FormData) => {
 
-    savePost(formData, quilValue, params.id);
+     const res = await savePost(formData, quilValue, params.id);
+     if(!res) {
+      toast.error("Error");
+      return
+     }
+     toast.success("success");
+     takeHome();
   }
 
 

@@ -6,6 +6,7 @@ import {LogoutLink, RegisterLink} from "@kinde-oss/kinde-auth-nextjs"
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'
+import { createPostId } from '@/app/actions/postActions';
 
 
 const Theme = ({
@@ -66,13 +67,18 @@ const Theme = ({
                     }}
                     className='absolute max-lg:hidden right-3 h-[100px] top-20 p-4 border rounded-md bg-white z-50'
                 >
-                    <div>
+                    <div className='flex flex-col gap-3'>
                          <LogoutLink>
                             <div className="flex items-center gap-2 font-bold">
                                 <LogOutIcon />
                                 <p>Logout</p>
                             </div>
                         </LogoutLink>
+
+                        <div onClick={async () => await createPostId()} className='flex items-center gap-2 cursor-pointer'>
+                        <NotebookIcon  className=" text-lg font-bold"/>
+                        <p className="font-bold">Create</p>
+                        </div>
         </div>
         <div>
             

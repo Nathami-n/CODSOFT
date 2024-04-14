@@ -12,6 +12,7 @@ export type Posts = {
     body: string | null;
     category: string | null;
     authorId: string;
+    createdAt: Date;
     author: {
         id: string;
         email: string;

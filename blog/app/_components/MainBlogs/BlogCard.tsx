@@ -9,7 +9,7 @@ export const BlogCard = ({
 }
 ) => {
     const text = post?.body as string;
-    const strippedText = text.replace(/<\/?p>/g,'');
+    const strippedText = text?.replace(/<\/?p>/g,'');
     return (
         <div 
         style={{
@@ -52,7 +52,7 @@ export const BlogCard = ({
                     By
                 </span>
                 <span className="text-[#022140] font-bold">
-                  Nate
+                  {post?.author.name}
                  </span>
                 <h1 className="text-[#687081] font-extrabold">
                     .
@@ -60,7 +60,7 @@ export const BlogCard = ({
                 <span
                 className="text-[#687081] font-bold"
                 >
-                    November 28, 2023
+                    {post?.createdAt.toUTCString().split(' ').slice(0, 4).join(" ")}
                 </span>
                </div>
                <h1 className="text-[#687081]"> 2 minutes read</h1>
