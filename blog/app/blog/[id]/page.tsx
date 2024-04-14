@@ -35,6 +35,7 @@ const BlogPage = ({
             flex-col
             items-start
             mx-auto
+            max-lg:px-8
             ">
                 <h1 className="mb-5 text-[48px] text-[#022140] font-bold"> {post?.title}</h1>
                 <div className="text-[#687081]text-[16px]"
@@ -85,15 +86,13 @@ const BlogPage = ({
                 className="max-w-[1100px] mx-auto border-t-2 pt-6 mt-5"
             >
                 <div
-                    style={{
-                        gridTemplateColumns: "2fr 1fr"
-                    }}
-                    className="grid mt-11"
+                    
+                    className="grid max-lg:px-8 mt-11  gap-6 lg:grid-cols-3"
                 >
                     {/* blog */}
-                    <div>
+                    <div className=" lg:col-span-2 ">
                         <h1 className="text-[#687081] text-xl mb-4">By <span className="text-[#022140] font-bold">{post?.author.name}</span></h1>
-                        <div className="max-w-[90%] border p-3">
+                        <div className="lg:max-w-[90%] max-lg:w-full lg:border lg:p-5">
                             {paragraphs?.map((paragraph, index) => (
                                 <p className="mb-2"key={index} dangerouslySetInnerHTML={{ __html: paragraph + '</p>' }} />
                             ))}

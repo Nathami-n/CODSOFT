@@ -11,10 +11,10 @@ import {
 } from '@/components/ui/select'
 import Image from 'next/image'
 import { categories } from "@/app/utils/categories"
-
+import {toast} from 'react-hot-toast'
 import "react-quill/dist/quill.snow.css"
 import ReactQuill from "react-quill"
-import { ImageIcon, ImageOffIcon, PlusIcon } from "lucide-react"
+import { PlusIcon } from "lucide-react"
 import { savePost, takeHome} from "@/app/actions/postActions"
 const Page = ({
   params

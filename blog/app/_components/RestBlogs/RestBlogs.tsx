@@ -7,7 +7,7 @@ import {categories} from '@/app/utils/categories'
 
 const RestBlogs = () => {
   return (
-    <div className="h-screen lg:col-span-1">
+    <div className="lg:col-span-1">
       <Intro/>
       <MorePosts/>
       <div className="border-b pb-6">

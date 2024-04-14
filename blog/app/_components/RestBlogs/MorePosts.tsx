@@ -18,7 +18,7 @@ const MorePosts = () => {
     }, [])
 
     return (
-        <div className="mt-10">
+        <div className="mt-10 max-lg:hidden">
             <h1 className="mb-3 text-[#022140] text-xl font-bold">More Posts</h1>
             <div>
                 {restPost?.map((post, i)=> {

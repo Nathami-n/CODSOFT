@@ -4,6 +4,7 @@ import "./globals.css";
 import { RootLayoutProps } from "@/types/rootLayout";
 import { Navbar } from "./_components";
 import Provider from "./_components/providers/ThemeProvider";
+import ToastProvider from "./providers/ToastProvider";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -19,8 +20,10 @@ export default function RootLayout({
       
         <body className={`${manrope.className}`}>
         <Provider>
-          <Navbar />
+         <ToastProvider/>
+         <Navbar />
           {children}
+         
           </Provider>
         </body>
    
