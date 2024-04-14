@@ -31,6 +31,11 @@ export const savePost = async (formData: FormData, content: string, postId: stri
     const photo = formData.get("image") as File;
     const category = formData.get("category") as string;
     
+    
+
+    if(!title || !photo || !! category) {
+        return
+    }
     // upload the photo
 
     const {data: imageData, error} = await supabase.storage.from("nateLog").upload(`${photo.name}-${new Date().toISOString()}`, photo, {
@@ -42,6 +47,8 @@ export const savePost = async (formData: FormData, content: string, postId: stri
         console.error(error)
         return
     }
+
+    
     // update the file in database
 
     const updatedFile = await prisma.post.update({
@@ -53,6 +60,7 @@ export const savePost = async (formData: FormData, content: string, postId: stri
             imageLink: imageData?.path as string,
             category: category.trim().toLowerCase(),
             body: content as string,
+            complete: true,
         }
     })
     

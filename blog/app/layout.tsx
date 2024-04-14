@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { RootLayoutProps } from "@/types/rootLayout";
-import { Navbar } from "./_components";
+import { Navbar, Footer } from "./_components";
 import Provider from "./_components/providers/ThemeProvider";
 import ToastProvider from "./providers/ToastProvider";
 const manrope = Manrope({ subsets: ["latin"] });
@@ -23,7 +23,7 @@ export default function RootLayout({
          <ToastProvider/>
          <Navbar />
           {children}
-         
+         <Footer/>
           </Provider>
         </body>
    

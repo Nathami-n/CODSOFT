@@ -30,6 +30,7 @@ model Post {
   author User @relation(fields:[authorId], references: [kindeId])
   category String?
   authorId String 
+  complete Boolean @default(false)
   createdAt DateTime @default(now())
   comments Comment[]
 }

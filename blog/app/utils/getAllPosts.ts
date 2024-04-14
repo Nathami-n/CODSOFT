@@ -13,6 +13,9 @@ export const getPost =  async () => {
         createdAt: true,
         author: true
     },
+    where: {
+        complete: true
+    },
     orderBy:{
         createdAt: 'desc'
     }
@@ -32,6 +35,9 @@ export const getPosts = async () => {
             author: true,
             imageLink: true,
             createdAt: true
+        },
+        where: {
+            complete:true,
         },
         orderBy: {
             createdAt:'asc'

@@ -10,6 +10,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button 
     type ={ title === 'Post' ? "submit": "button"}
+    onClick ={ handleCancel && handleCancel}
     className={`rounded-full p-2 bg-black w-[150px] text-sm text-white mt-2 hover:bg-rose-500 transition-all ${title === "Cancel" ? "bg-blue-500 text-white" : ""}`}
     >
         {title}
