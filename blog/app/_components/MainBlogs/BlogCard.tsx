@@ -12,10 +12,8 @@ export const BlogCard = ({
     const strippedText = text?.replace(/<\/?p>/g,'');
     return (
         <div 
-        style={{
-            gridTemplateColumns: "1fr 1fr",
-        }}
-        className="grid gap-6 mb-5 border-b-2 pb-6"
+        
+        className="grid lg:grid-cols-2 gap-6 mb-5 border-b-2 pb-6"
         >
             {/* Image */}
            <Link href={`/blog/${post?.id}`}>
