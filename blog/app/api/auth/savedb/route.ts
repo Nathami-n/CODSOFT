@@ -7,22 +7,23 @@ export const GET = async () => {
     const {getUser} = getKindeServerSession();
     const user = await getUser();
 
-    const dbUser = await prisma.user.findUnique({
-        where: {
-            kindeId: user?.id as string,
-            email: user?.email as string
-        }
-    })
-
-    if(!dbUser) {
-        const newUser = await prisma.user.create({
-            data: {
-                kindeId: user?.id as string,
-                name: user?.given_name as string,
-                email: user?.email as string,
-                imageUrl: user?.picture as string
+    if (user !== null) {
+        const dbUser = await prisma.user.findUnique({
+            where: {
+                email: user.email as string
             }
         })
+    
+        if(!dbUser) {
+            const newUser = await prisma.user.create({
+                data: {
+                    kindeId: user.id as string,
+                    name: user.given_name as string,
+                    email: user.email as string,
+                    imageUrl: user.picture as string
+                }
+            })
+        }
     }
 
     return NextResponse.redirect('http://localhost:3000');
