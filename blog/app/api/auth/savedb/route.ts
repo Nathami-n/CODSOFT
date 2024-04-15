@@ -27,6 +27,9 @@ export const GET = async () => {
         return NextResponse.redirect('http://localhost:3000');
     }
 
+
+    return NextResponse.json({error:'erro'})
+
     
     
 }
