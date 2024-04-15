@@ -9,7 +9,8 @@ export const GET = async () => {
 
     const dbUser = await prisma.user.findUnique({
         where: {
-            kindeId: user?.id as string
+            kindeId: user?.id as string,
+            email: user?.email as string
         }
     })
 
