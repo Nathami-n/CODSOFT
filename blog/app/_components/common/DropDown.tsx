@@ -24,7 +24,7 @@ const DropDown = ({
             <MenuIcon role='button' onClick={() => setOpen(!open)} />
             {open && (
                 <>
-                <div  onClick={() => setOpen(!open)} className="fixed cursor-pointer top-0 bottom-0 left-0 right-0 bg-black/50" />
+                <div  onClick={() => setOpen(!open)} className="fixed cursor-pointer top-0 bottom-0 left-0 right-0 bg-black/50 z-[40]" />
                 <motion.div
                     onClick={() => setOpen(!open)}
                     initial={{

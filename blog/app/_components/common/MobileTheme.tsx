@@ -45,7 +45,7 @@ const Theme = ({
     <div className="flex items-center gap-3">
     {iconRenderToggle()}
     {user && (
-        <div className=' absolute bottom-4 left-3 flex items-center gap-1'>
+        <div className=' absolute bottom-6 left-3 flex items-center gap-1'>
             <Image
         src={user?.picture as string}
         height={25}
