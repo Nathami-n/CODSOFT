@@ -1,10 +1,10 @@
-import { Welcome, MainBlogs, RestBlogs } from "./_components"
+import {  MainBlogs, RestBlogs } from "./_components"
 
 
 
 const Home = () => {
   return (
-    <div className ="dark:bg-black dark:text-white">
+    <div className ="dark:bg-[#09090b] dark:text-white ">
 
       <div 
       

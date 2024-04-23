@@ -14,9 +14,9 @@ const NavLinks = async () => {
 
     return (
      <div>
-        <div className='flex items-center max-lg:hidden justify-between flex-1 gap-5'>
+        <div className='flex items-center  max-lg:hidden justify-between flex-1 gap-5'>
             {links.map((link, i)=> {
-                return <Link key={i} href={link.title} className='font-semibold text-[#022140]'>{link.title}</Link>
+                return <Link key={i} href={link.title} className='font-semibold  text-[#022140]'>{link.title}</Link>
             })}
         </div>
 

@@ -8,7 +8,7 @@ const Navbar =  async () => {
 
   return (
     <div
-      className="w-full p-5 border-b flex items-center justify-between "
+      className="w-full p-5 border-b dark:border-[#e5e7eb] flex items-center justify-between "
     >
       <Logo />
       <NavLinks />

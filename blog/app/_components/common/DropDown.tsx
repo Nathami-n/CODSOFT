@@ -23,13 +23,16 @@ const DropDown = ({
         <div className="lg:hidden">
             <MenuIcon role='button' onClick={() => setOpen(!open)} />
             {open && (
+                <>
+                <div  onClick={() => setOpen(!open)} className="fixed cursor-pointer top-0 bottom-0 left-0 right-0 bg-black/50" />
                 <motion.div
+                    onClick={() => setOpen(!open)}
                     initial={{
-                        y: -100,
+                        x: 900,
                         opacity: 0
                     }}
                     animate={{
-                        y: 10,
+                        x: 0,
                         opacity: 1
                     }}
                     transition={{
@@ -37,10 +40,10 @@ const DropDown = ({
                         stiffness: '260',
                         damping: 20
                     }}
-                    className="lg:hidden fixed right-0 p-5 left-0 border  rounded-md bg-white z-50"
+                    className="lg:hidden fixed top-0 h-screen  w-[200px] right-0 p-5  border  rounded-md bg-white z-50"
                 >
                     <div className="flex flex-col gap-3 ">
-                        {user && (< button  className="font-semibold w-max text-[#022140]"  onClick={handlePost}> Start Blogging</button>)}
+                        {user && (<button className="font-semibold w-max text-[#022140]" onClick={handlePost}> Start Blogging</button>)}
                         {links.map((link, i) => {
                             return <Link key={i} href={link.title} className='font-semibold text-[#022140]'>{link.title}</Link>
                         })}
@@ -48,21 +51,21 @@ const DropDown = ({
                             <MobileTheme user={user} />
                         </div>
                         {user ? (
-                        <div className="grid"> 
-                            <LogoutLink>
-                            <div className="flex items-center gap-2 font-bold">
-                                <LogOutIcon />
-                                <p>Logout</p>
+                            <div className="grid">
+                                <LogoutLink>
+                                    <div className="flex items-center gap-2 font-bold">
+                                        <LogOutIcon />
+                                        <p>Logout</p>
+                                    </div>
+                                </LogoutLink>
                             </div>
-                        </LogoutLink>
-                        </div>
-                        ): (
+                        ) : (
                             <RegisterLink>
                                 <h1 className="font-semibold text-[#022140]">Sign Up</h1>
                             </RegisterLink>
                         )}
                     </div>
-                </motion.div>
+                </motion.div></>
             )}
         </div>
     )

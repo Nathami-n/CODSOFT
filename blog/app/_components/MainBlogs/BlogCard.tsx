@@ -13,7 +13,7 @@ export const BlogCard = ({
     return (
         <div 
         
-        className="grid lg:grid-cols-2 gap-6 mb-5 border-b-2 pb-6"
+        className="flex flex-col justify-center lg:grid lg:grid-cols-2 gap-6 mb-5 border-b-2 pb-6"
         >
             {/* Image */}
            <Link href={`/blog/${post?.id}`}>
@@ -31,6 +31,7 @@ export const BlogCard = ({
               alt='post Image' 
               fill
               />
+              <button className="absolute right-1 top-1 w-max p-1 rounded-lg bg-blue-500 text-white">{post?.category}</button>
             </div>
            </Link>
 
@@ -39,7 +40,8 @@ export const BlogCard = ({
             className="
             flex
             flex-col
-            justify-start
+            lg:justify-start
+            justify-center
             ">
                <div 
                className=" flex items-center gap-1"

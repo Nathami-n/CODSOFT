@@ -44,13 +44,18 @@ const Theme = ({
   return (
     <div className="flex items-center gap-3">
     {iconRenderToggle()}
-    {user && <Image
+    {user && (
+        <div className=' absolute bottom-4 left-3 flex items-center gap-1'>
+            <Image
         src={user?.picture as string}
         height={25}
         width={25}
         alt='user'
-        className='rounded-full absolute right-2 top-2'
-    />}
+        className='rounded-full cursor-pointer'
+    />
+    <p className='font-semibold text-[#022140] cursor-pointer'>Settings</p>
+        </div>
+    )}
    
     </div>
   )
