@@ -24,7 +24,7 @@ export const GET = async () => {
                 }
             })
         }
-        return NextResponse.redirect('http://localhost:3000');
+        return NextResponse.redirect('https://codsoft-ruddy-five.vercel.app');
     }
 
 
