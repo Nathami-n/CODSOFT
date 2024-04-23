@@ -37,14 +37,15 @@ const BlogPage = ({
             mx-auto
             max-lg:px-8
             ">
-                <h1 className="mb-5 text-[48px] text-[#022140] font-bold"> {post?.title}</h1>
+                <h1 className="mb-5 text-[48px] dark:text-muted-foreground text-[#022140] font-bold"> {post?.title}</h1>
                 <div className="text-[#687081]text-[16px]"
                 >
-                    November 28, 2023
+                    {post?.createdAt.toUTCString().split(' ').slice(0, 4).join(" ")}
                 </div>
                 <div
                     className="
                 mt-1
+                dark:text-muted-foreground
                 text-[#687081]text-[16px]"
                 >
                     2 Minutes Read
@@ -53,6 +54,8 @@ const BlogPage = ({
                     className="
                 bg-[#687081]
                 text-white
+                dark:text-muted-foreground
+                dark:border-border
                 border
                 p-1
                 rounded-sm
@@ -83,7 +86,7 @@ const BlogPage = ({
                 </div>
             </div>
             <section
-                className="max-w-[1100px] mx-auto border-t-2 pt-6 mt-5"
+                className="max-w-[1100px] mx-auto border-t dark:border-t-border pt-6 mt-5"
             >
                 <div
                     
@@ -92,7 +95,7 @@ const BlogPage = ({
                     {/* blog */}
                     <div className=" lg:col-span-2 ">
                         <h1 className="text-[#687081] text-xl mb-4">By <span className="text-[#022140] font-bold">{post?.author.name}</span></h1>
-                        <div className="lg:max-w-[90%] max-lg:w-full lg:border lg:p-5">
+                        <div className="lg:max-w-[90%] max-lg:w-full lg:border lg:dark:border-border lg:p-5">
                             {paragraphs?.map((paragraph, index) => (
                                 <p className="mb-2"key={index} dangerouslySetInnerHTML={{ __html: paragraph + '</p>' }} />
                             ))}

@@ -13,7 +13,7 @@ export const BlogCard = ({
     return (
         <div 
         
-        className="flex flex-col justify-center lg:grid lg:grid-cols-2 gap-6 mb-5 border-b-2 pb-6"
+        className="flex flex-col justify-center lg:grid lg:grid-cols-2 gap-6 mb-5 border-b pb-6 dark:border-border"
         >
             {/* Image */}
            <Link href={`/blog/${post?.id}`}>
@@ -42,6 +42,7 @@ export const BlogCard = ({
             flex-col
             lg:justify-start
             justify-center
+            dark:text-muted-foreground
             ">
                <div 
                className=" flex items-center gap-1"
@@ -51,7 +52,7 @@ export const BlogCard = ({
                 >
                     By
                 </span>
-                <span className="text-[#022140] font-bold">
+                <span className=" dark:text-muted-foreground text-[#022140] font-bold">
                   {post?.author.name}
                  </span>
                 <h1 className="text-[#687081] font-extrabold">
@@ -64,9 +65,9 @@ export const BlogCard = ({
                 </span>
                </div>
                <h1 className="text-[#687081]"> 2 minutes read</h1>
-              <Link href={`/blog/${post?.id}`}> <h3 className="text-xl font-bold text-[#395fa0] mt-2 cursor-pointer">{post?.title}</h3></Link>
+              <Link href={`/blog/${post?.id}`}> <h3 className="text-xl font-bold text-[#395fa0] mt-2 cursor-pointer dark:text-muted-foreground">{post?.title}</h3></Link>
 
-               <p className="text-[#687081] text-[16px] line-clamp-3">{strippedText}</p>
+               <p className="text-[#687081] text-[16px] line-clamp-3 dark:text-muted-foreground">{strippedText}</p>
             </div>
 
         </div>

@@ -4,7 +4,7 @@ import {  MainBlogs, RestBlogs } from "./_components"
 
 const Home = () => {
   return (
-    <div className ="dark:bg-[#09090b] dark:text-white ">
+    <div className ="dark:bg-background dark:text-muted-foreground ">
 
       <div 
       

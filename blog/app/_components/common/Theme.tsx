@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion'
 import { createPostId } from '@/app/actions/postActions';
+import { ModeToggle } from './ThemeChanger';
 
 
 const Theme = ({
@@ -14,34 +15,12 @@ const Theme = ({
 }: {
     user?: KindeUser | null
 }) => {
-    const [mounted, setMounted] = useState(false);
+
     const [open, setOpen] = useState(false);
-    const { systemTheme, theme, setTheme } = useTheme();
-    useEffect(() => {
-        setMounted(true);
-    }, []);
-
-    if (!mounted) {
-        return null;
-    }
-    const iconRenderToggle = () => {
-        if (!mounted) return <div />;
-        const userTheme = theme === 'system' ? systemTheme : theme;
-        if (userTheme === 'dark') {
-            return (
-                <SunIcon className=" max-lg:hidden  text-yellow-500 cursor-pointer" role='button' onClick={() => setTheme('light')} />
-            )
-        }
-        else {
-            return (
-                <MoonIcon className=" max-lg:hidden cursor-pointer" role='button' onClick={() => setTheme('dark')} />
-            )
-        }
-    };
-
+    
     return (
         <>
-            {iconRenderToggle()}
+        <ModeToggle/>
             {user && <Image
                 src={user?.picture as string}
                 height={25}
