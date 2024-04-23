@@ -6,9 +6,9 @@ const Footer = () => {
         <div className="max-w-[1500px] mx-auto">
 
             <div 
-            className="lg:grid lg:gap-6 lg:grid-cols-4 mb-6"
+            className="lg:grid flex items-center flex-wrap lg:gap-6 lg:grid-cols-4 mb-6"
             >
-                <div className="lg:col-span-2">
+                <div className="lg:col-span-2 max-lg:mb-5 max-lg:border-b max-lg:pb-2">
                     <h1 className="text-3xl font-bold mb-2">Nate<span className="text-blue-600">Log.</span></h1>
                     <p>Get informed on diverse and relevant up-to-date stories written with a team of well informed scribes in the digital era. Connect with passionate developers today</p>
                 </div>
@@ -22,7 +22,7 @@ const Footer = () => {
                     </div>
                 </div>
                 {/* follow */}
-                <div>
+                <div className='max-lg:ml-[60px]'>
                     <h1 className="font-bold mb-3">Follow us</h1>
                     <div className='flex flex-col gap-3'>
                         <Link href='/'><FacebookIcon className='text-blue-900 text-xl border rounded-full p-1 bg-white'/></Link>
