@@ -16,7 +16,7 @@ const DropDown = ({
     user: KindeUser | null
 }) => {
     const [open, setOpen] = useState<boolean>(false);
-    const handlePost =  async () => {
+    const handlePost = async () => {
         await createPostId()
     }
     return (
@@ -24,48 +24,48 @@ const DropDown = ({
             <MenuIcon role='button' onClick={() => setOpen(!open)} />
             {open && (
                 <>
-                <div  onClick={() => setOpen(!open)} className="fixed cursor-pointer top-0 bottom-0 left-0 right-0 bg-black/50 z-[40]" />
-                <motion.div
-                    onClick={() => setOpen(!open)}
-                    initial={{
-                        x: 900,
-                        opacity: 0
-                    }}
-                    animate={{
-                        x: 0,
-                        opacity: 1
-                    }}
-                    transition={{
-                        type: 'spring',
-                        stiffness: '260',
-                        damping: 20
-                    }}
-                    className="lg:hidden fixed top-0 h-screen  w-[200px] right-0 p-5  border  rounded-md bg-white z-50"
-                >
-                    <div className="flex flex-col gap-3 ">
-                        {user && (<button className="font-semibold w-max text-[#022140]" onClick={handlePost}> Start Blogging</button>)}
-                        {links.map((link, i) => {
-                            return <Link key={i} href={link.title} className='font-semibold text-[#022140]'>{link.title}</Link>
-                        })}
-                        <div>
-                            <MobileTheme user={user} />
+                    <div onClick={() => setOpen(!open)} className="fixed cursor-pointer top-0 bottom-0 left-0 right-0 bg-black/50 z-[40]" />
+                    <motion.div
+                        onClick={() => setOpen(!open)}
+                        initial={{
+                            x: 900,
+                            opacity: 0
+                        }}
+                        animate={{
+                            x: 0,
+                            opacity: 1
+                        }}
+                        transition={{
+                            type: 'spring',
+                            stiffness: '260',
+                            damping: 20
+                        }}
+                        className="lg:hidden fixed w-[400px] right-0 flex items-center  border px-auto py-4 justify-center rounded-xl dark:bg-black/20 bg-white z-50"
+                    >
+                        <div className="flex flex-col gap-3 ">
+                            {user && (<button className="font-semibold w-max  dark:text-gray-100" onClick={handlePost}> Start Blogging</button>)}
+                            {links.map((link, i) => {
+                                return <Link key={i} href={link.title} className='font-semibold w-full dark:text-gray-100'>{link.title}</Link>
+                            })}
+
+                            {/* <MobileTheme user={user} /> */}
+
+                            {user ? (
+                                <div className="grid">
+                                    <LogoutLink>
+                                        <div className="flex items-center gap-2 font-bold">
+                                            <LogOutIcon />
+                                            <p className="dark:text-gray-100">Logout</p>
+                                        </div>
+                                    </LogoutLink>
+                                </div>
+                            ) : (
+                                <RegisterLink>
+                                    <h1 className="font-semibold dark:text-gray-100">Sign Up</h1>
+                                </RegisterLink>
+                            )}
                         </div>
-                        {user ? (
-                            <div className="grid">
-                                <LogoutLink>
-                                    <div className="flex items-center gap-2 font-bold">
-                                        <LogOutIcon />
-                                        <p>Logout</p>
-                                    </div>
-                                </LogoutLink>
-                            </div>
-                        ) : (
-                            <RegisterLink>
-                                <h1 className="font-semibold text-[#022140]">Sign Up</h1>
-                            </RegisterLink>
-                        )}
-                    </div>
-                </motion.div></>
+                    </motion.div></>
             )}
         </div>
     )
