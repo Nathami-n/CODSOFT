@@ -24,10 +24,10 @@ const fetchPosts = async (category: string) => {
 
 const AllBlogs = async () => {
 
-    const business = await fetchPosts('Business');
-    const Science = await fetchPosts("Science");
-    const Network = await fetchPosts("Network");
-    const Technology = await fetchPosts("Technology");
+    const business = await fetchPosts('business');
+    const Science = await fetchPosts("science");
+    const Network = await fetchPosts("network");
+    const Technology = await fetchPosts("technology");
     return (
         <div className="flex flex-col gap-8">
             <div>
