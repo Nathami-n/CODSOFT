@@ -40,7 +40,7 @@ const DropDown = ({
                             stiffness: '260',
                             damping: 20
                         }}
-                        className="lg:hidden fixed w-[400px] right-0 flex items-center  border px-auto py-4 justify-center rounded-xl dark:bg-black/20 bg-white z-50"
+                        className="lg:hidden fixed w-[400px] right-0 flex items-center  dark:border-border  border px-auto py-4 justify-center rounded-xl dark:bg-black/20 bg-white z-50"
                     >
                         <div className="flex flex-col gap-3 ">
                             {user && (<button className="font-semibold w-max  dark:text-gray-100" onClick={handlePost}> Start Blogging</button>)}

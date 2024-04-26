@@ -1,5 +1,6 @@
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-import Button from "../common/Button"
 
 const Welcome = () => {
     return (
@@ -12,9 +13,9 @@ const Welcome = () => {
                     </h1>
                     <p className="dark:text-muted-foreground"> Read, Write and Learn on NateLog.</p>
                 </div>
-               <div>
+               <div className="rounded-full bg-black hover:bg-rose-500 text-white mt-1 transition border p-2 w-max">
                
-                <Button title="Get Started"/>
+                   <Link href="/allblogs">Get Started</Link>
                </div>
             </div>
          
