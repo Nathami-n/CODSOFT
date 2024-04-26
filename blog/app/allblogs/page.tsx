@@ -4,7 +4,7 @@ const AllBlogs = () => {
         <div>
             <div>hello</div>
             <div>hello</div>
-            <div>hello</div>
+            <div>hello000</div>
         </div>
     )
 };
