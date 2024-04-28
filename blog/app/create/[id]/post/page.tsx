@@ -1,5 +1,4 @@
 'use client'
-
 import { useState } from "react"
 import PostSave from '@/app/_components/common/PostSave'
 import {
@@ -9,8 +8,8 @@ import {
   SelectTrigger,
   SelectValue
 } from '@/components/ui/select'
-import Image from 'next/image'
-import { categories } from "@/app/utils/categories"
+import Image from 'next/image';
+import { categories } from "@/app/utils/categories";
 import {toast} from 'react-hot-toast'
 import "react-quill/dist/quill.snow.css"
 import ReactQuill from "react-quill"

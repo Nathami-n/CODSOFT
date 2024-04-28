@@ -1,6 +1,6 @@
-import Logo from './Logo'
-import NavLinks from './NavLinks'
-import UserMenu from './UserMenu'
+import {Logo} from './Logo'
+import {NavLinks} from './NavLinks'
+import {UserMenu} from './UserMenu'
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server'
 const Navbar =  async () => {
   const {getUser} = getKindeServerSession();

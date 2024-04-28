@@ -1,6 +1,4 @@
 "use server"
-
-import { PostType } from "@/types/postType"
 import {redirect} from 'next/navigation'
 import prisma from '@/app/utils/prismaClient'
 import {supabase} from '../utils/supabaseClient'

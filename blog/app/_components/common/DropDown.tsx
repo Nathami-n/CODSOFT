@@ -1,12 +1,11 @@
 
 'use client'
-import { LogOut, LogOutIcon, MenuIcon, NotebookIcon, RouteOffIcon } from "lucide-react"
+import {  LogOutIcon, MenuIcon} from "lucide-react"
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { links } from '@/app/utils/links'
 import Link from 'next/link'
 import type { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types"
-import MobileTheme from '../common/MobileTheme'
 import { LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs"
 import { createPostId } from "@/app/actions/postActions"
 

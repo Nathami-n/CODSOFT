@@ -1,4 +1,4 @@
-import { PostCard } from "../_components/common/postCard";
+import { PostCard } from "../_components/common/PostCard";
 import prisma from "../utils/prismaClient";
 
 const fetchPosts = async (category: string) => {

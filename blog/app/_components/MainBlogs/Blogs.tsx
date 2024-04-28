@@ -3,7 +3,7 @@
 import { getPost } from "@/app/utils/getAllPosts"
 import { Posts } from "@/types/postType"
 import BlogCard from './BlogCard'
-import { Suspense, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import BlogsFallBack from "./BlogsFallBack"
 const Blogs = () => {
     const [posts, setPosts] = useState<Posts[] | null>(null);
