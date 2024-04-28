@@ -2,7 +2,7 @@ import { Posts } from "@/types/postType";
 import Image from "next/image";
 import Link from 'next/link';
 
-export const PostCard = ({
+const PostCard = ({
     post
 }: {
     post: Posts
@@ -53,3 +53,5 @@ export const PostCard = ({
         </div>
     )
 }
+
+export default PostCard
