@@ -29,7 +29,7 @@ const RestBlogs = () => {
                 hover:bg-blue-500
                 
                 "
-                href={`/searchblogs/${cat.title.toLowerCase()}`}
+                href={`/searchblog/${cat.title.toLowerCase()}`}
                  key={i}>
                   {cat.title}
                 </Link>
