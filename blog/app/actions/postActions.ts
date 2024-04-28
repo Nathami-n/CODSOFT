@@ -31,7 +31,7 @@ export const savePost = async (formData: FormData, content: string, postId: stri
     
     
 
-    if(!title || !photo || !! category) {
+    if(!title || !photo || !category) {
         return
     }
     // upload the photo
