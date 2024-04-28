@@ -12,7 +12,7 @@ const RestBlogs = () => {
       <MorePosts/>
       <div className="border-b pb-6">
         <div>
-          <h1 className="text-[#022140] text-xl font-bold">Explore Categories</h1>
+          <h1 className="text-[#022140] text-xl font-bold dark:text-muted-foreground">Explore Categories</h1>
           <div className="flex flex-wrap mt-1 gap-3 items-center">
             {categories.map((cat, i)=> {
               return(
@@ -29,7 +29,7 @@ const RestBlogs = () => {
                 hover:bg-blue-500
                 
                 "
-                href='/'
+                href={`/searchblogs/${cat.title.toLowerCase()}`}
                  key={i}>
                   {cat.title}
                 </Link>

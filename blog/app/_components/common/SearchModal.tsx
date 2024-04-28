@@ -24,7 +24,7 @@ const SearchModal = () => {
         router.push(`/searchblog/${category}`);
     }
     return (
-        <Dialog open={open}>
+        <Dialog>
             <DialogTrigger>
                 <SearchIcon type='button' onClick={()=> setOpen(true)}/>
         </DialogTrigger>
