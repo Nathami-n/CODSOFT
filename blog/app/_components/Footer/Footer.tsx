@@ -26,8 +26,8 @@ const Footer = () => {
                     <h1 className="font-bold mb-3">Follow us</h1>
                     <div className='flex flex-col gap-3'>
                         <Link href='/'><FacebookIcon className='text-blue-900 text-xl border rounded-full p-1 bg-white'/></Link>
-                        <Link href='/'><TwitterIcon className='text-blue-900 text-xl border rounded-full p-1 bg-white'/></Link>
-                        <Link href='/'><Linkedin className='text-blue-900 text-xl border rounded-full p-1 bg-white'/></Link>
+                        <Link target='_blank'  href='https://x.com/NathanGeor69202?t=lWxt5wDH-HjvbCE9S2AEQg&s=08 '><TwitterIcon className='text-blue-900 text-xl border rounded-full p-1 bg-white'/></Link>
+                        <Link  target="_blank" href='https://www.linkedin.com/in/nathan-george-mi'><Linkedin className='text-blue-900 text-xl border rounded-full p-1 bg-white'/></Link>
                     </div>
                 </div>
             </div>

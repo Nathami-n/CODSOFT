@@ -16,7 +16,7 @@ const MiniCard = ( {
         style={{
             gridTemplateColumns: ".4fr 1fr",
         }}
-        className="grid gap-4  mb-5 border-b-1 dark:border-b-border pb-6"
+        className="grid gap-4  mb-5 border-b-1 dark:border-border pb-6"
         >
             <div className="relative h-full">
                <Link href={`/blog/${post?.id}`}> <Image alt='blog image' src={`https://jjghnotanxljscpakcuz.supabase.co/storage/v1/object/public/nateLog/${post?.imageLink}`} className="object-cover" fill/></Link>

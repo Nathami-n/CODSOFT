@@ -13,12 +13,12 @@ const Intro =  () => {
 
             <p className="font-semibold mt-1">Explore our carefully and critically curated hub for blogs and articles. Have a great time with content designed to inform and entertain on the global scale!</p>
             <div className="flex mt-1 gap-4 items-center">
-                <Link href="/">
+                <Link  target="_blank" href="https://x.com/NathanGeor69202?t=lWxt5wDH-HjvbCE9S2AEQg&s=08 ">
                     <Image
                         alt="social image"
                         src="https://assets-global.website-files.com/6564b53cf6c761cadcd23766/65658eda50fe4c108386e832_twitter.png" width={25} height={25} />
                 </Link>
-                <Link href="/">
+                <Link target='_blank' href="https://www.linkedin.com/in/nathan-george-mi">
                     <Image
                         alt="social image"
                         src="https://assets-global.website-files.com/6564b53cf6c761cadcd23766/65658edab4a890812e36b2d7_linkedin.png" width={25} height={25} />
