@@ -1,5 +1,6 @@
-import CustomButton from "./CustomButton"
-import { useRouter } from 'next/navigation'
+import CustomButton from "./CustomButton";
+import { useRouter } from 'next/navigation';
+import { Button } from "@/components/ui/button";
 
 const PostSave = ({
   pending
@@ -18,10 +19,12 @@ const PostSave = ({
         handleCancel={handleCancel}
 
       />
-      <CustomButton
-        title="Post"
-        pending={pending}
-      />
+      <Button
+      disabled={pending}
+      className="bg-black text-white rounded-full w-[100px] hover:bg-rose-500 transition"
+      >
+        <p> {pending ? "Loading..." : "Post"}</p>
+      </Button>
 
     </div>
   )
