@@ -1,7 +1,11 @@
 import CustomButton from "./CustomButton"
 import { useRouter } from 'next/navigation'
 
-const PostSave = () => {
+const PostSave = ({
+  pending
+}:{
+  pending: boolean
+}) => {
   const router = useRouter();
   const handleCancel = () => {
     router.push('/');
@@ -16,6 +20,7 @@ const PostSave = () => {
       />
       <CustomButton
         title="Post"
+        pending={pending}
       />
 
     </div>

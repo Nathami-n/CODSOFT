@@ -10,7 +10,8 @@ import {
 } from '@/components/ui/select'
 import Image from 'next/image';
 import { categories } from "@/app/utils/categories";
-import {toast} from 'react-hot-toast'
+import {toast} from 'react-hot-toast';
+import {useFormStatus} from 'react-dom';
 import "react-quill/dist/quill.snow.css"
 import ReactQuill from "react-quill"
 import { PlusIcon } from "lucide-react"
@@ -23,6 +24,7 @@ const Page = ({
   }
 }) => {
   const [quilValue, setQuilValue] = useState('');
+  const {pending} = useFormStatus();
   const [image, setImage] = useState<File|null>(null);
   const handleFileChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
@@ -119,7 +121,7 @@ const Page = ({
           </Select>
         </div>
       </div>
-      <PostSave />
+      <PostSave pending={pending}/>
     </form>
      
     </>

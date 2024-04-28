@@ -31,7 +31,7 @@ const AllBlogs = async () => {
     return (
         <div className="flex flex-col gap-8 max-w-5xl mx-auto px-3">
             <div>
-                <h1 className="mb-2">Business</h1>
+                <h1 className="mb-2 font-bold">Business</h1>
                 <div className="flex gap-2 items-center">
                     {business.map((post) => {
                         return <PostCard key={post.id} post={post} />
@@ -39,7 +39,7 @@ const AllBlogs = async () => {
                 </div>
             </div>
             <div>
-                <h1 className="mb-2">Science</h1>
+                <h1 className="mb-2 font-bold">Science</h1>
                 <div className="flex gap-2 items-center">
                     {Science.map((post) => {
                         return <PostCard key={post.id} post={post} />
@@ -47,7 +47,7 @@ const AllBlogs = async () => {
                 </div>
             </div>
             <div>
-                <h1 className="mb-2">Network</h1>
+                <h1 className="mb-2 font-bold">Network</h1>
                 <div className="flex gap-2 items-center flex-wrap">
                     {Network.map((post) => {
                         return <PostCard key={post.id} post={post} />
@@ -55,7 +55,7 @@ const AllBlogs = async () => {
                 </div>
             </div>
             <div>
-                <h1 className="mb-2" >Technology</h1>
+                <h1 className="mb-2 font-bold" >Technology</h1>
                 <div className=" flex gap-3 flex-wrap">
                     {Technology.map((post) => {
                         return <PostCard key={post.id} post={post} />
