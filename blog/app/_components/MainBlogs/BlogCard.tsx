@@ -1,6 +1,7 @@
 import { Posts } from "@/types/postType"
 import Image from 'next/image'
 import Link from 'next/link'
+import Dompurify from 'dompurify';
 
 export const BlogCard = ({
     post
@@ -9,6 +10,7 @@ export const BlogCard = ({
 }
 ) => {
     const text = post?.body as string;
+    const sanitizedContent = Dompurify.sanitize(text);
     const strippedText = text?.replace(/<\/?p>/g,'');
     return (
         <div 
@@ -67,7 +69,7 @@ export const BlogCard = ({
                <h1 className="text-[#687081]"> 2 minutes read</h1>
               <Link href={`/blog/${post?.id}`}> <h3 className="text-xl font-bold text-[#395fa0] mt-2 cursor-pointer dark:text-muted-foreground">{post?.title}</h3></Link>
 
-               <p className="text-[#687081] text-[16px] line-clamp-3 dark:text-muted-foreground">{strippedText}</p>
+               <p className="text-[#687081] text-[16px] line-clamp-3 dark:text-muted-foreground" dangerouslySetInnerHTML={{__html: sanitizedContent}}/>
             </div>
 
         </div>
