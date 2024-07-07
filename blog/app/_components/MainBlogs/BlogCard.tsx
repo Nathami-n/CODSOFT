@@ -67,7 +67,7 @@ export const BlogCard = ({
                <h1 className="text-[#687081]"> 2 minutes read</h1>
               <Link href={`/blog/${post?.id}`}> <h3 className="text-xl font-bold text-[#395fa0] mt-2 cursor-pointer dark:text-muted-foreground">{post?.title}</h3></Link>
 
-               <p className="text-[#687081] text-[16px] line-clamp-3 dark:text-muted-foreground">{strippedText}</p>
+               <p className="text-[#687081] text-[16px] line-clamp-3 dark:text-muted-foreground">{text}</p>
             </div>
 
         </div>
